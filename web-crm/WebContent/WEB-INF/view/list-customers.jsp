@@ -1,10 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>List Customers</title>
+	<meta charset="ISO-8859-1">
+	<title>List Customers</title>
+	<link type="text/css" rel="stylesheet" 
+		href="${pageContext.request.contextPath}/resources/css/style.css"/>
 </head>
 <body>
 
