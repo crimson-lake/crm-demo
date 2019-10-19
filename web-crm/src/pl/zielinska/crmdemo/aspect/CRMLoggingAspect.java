@@ -2,7 +2,9 @@ package pl.zielinska.crmdemo.aspect;
 
 import java.util.logging.Logger;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
@@ -24,4 +26,12 @@ public class CRMLoggingAspect {
 	
 	@Pointcut("forControllerPackage || forServicePackage() || forDAOPackage()")
 	private void forAppFlow() {}
+	
+	@Before("forAppFlow()")
+	public void before(JoinPoint theJoinPoint) {
+		
+		String theMethod = theJoinPoint.getSignature().toShortString();
+		myLogger.info("*** @Before: calling method: " + theMethod + " ***");
+		
+	}
 }
