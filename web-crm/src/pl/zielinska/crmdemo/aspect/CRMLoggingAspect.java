@@ -15,13 +15,13 @@ public class CRMLoggingAspect {
 	
 	private Logger myLogger = Logger.getLogger(getClass().getName());
 	
-	@Pointcut("execution(* pl.zielinska.crmdemo.controller.*.*.(..))")
+	@Pointcut("execution(* pl.zielinska.crmdemo.controller.*.*(..))")
 	private void forControllerPackage() {}
 	
-	@Pointcut("execution(* pl.zielinska.crmdemo.service.*.*.(..))")
+	@Pointcut("execution(* pl.zielinska.crmdemo.service.*.*(..))")
 	private void forServicePackage() {}
 	
-	@Pointcut("execution(* pl.zielinska.crmdemo.dao.*.*.(..))")
+	@Pointcut("execution(* pl.zielinska.crmdemo.dao.*.*(..))")
 	private void forDAOPackage() {}
 	
 	@Pointcut("forControllerPackage || forServicePackage() || forDAOPackage()")
