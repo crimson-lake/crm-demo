@@ -24,7 +24,7 @@ public class CRMLoggingAspect {
 	@Pointcut("execution(* pl.zielinska.crmdemo.dao.*.*(..))")
 	private void forDAOPackage() {}
 	
-	@Pointcut("forControllerPackage || forServicePackage() || forDAOPackage()")
+	@Pointcut("forControllerPackage() || forServicePackage() || forDAOPackage()")
 	private void forAppFlow() {}
 	
 	@Before("forAppFlow()")
